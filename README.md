@@ -2,21 +2,21 @@
   <img height="80" src="https://s.gravatar.com/avatar/6275a0046443d6fb33421b52e503bc3e?s=140">
 </p>
 
-# StowayNet.DependencyInjection 　　　　　　　　　　　[En](https://github.com/stoway/StowayNet.DependencyInjection/blob/master/README.en-us.md)
- StowayNet.DependencyInjection 是基于 .net core 框架中的依赖注入实现的扩展方法，它可以在项目中更简捷的实现依赖注入。
+# StowayNet.Extensions.DependencyInjection 　　　　　　　　　　　[En](https://github.com/stoway/StowayNet.Extensions.DependencyInjection/blob/master/README.en-us.md)
+ StowayNet.Extensions.DependencyInjection 是基于 .net core 框架中的依赖注入实现的扩展方法，它可以在项目中更简捷的实现依赖注入。
 
 ## 入门
 ### NuGet 
 
-你可以运行以下命令在你的项目中安装 StowayNet.DependencyInjection。
+你可以运行以下命令在你的项目中安装 StowayNet.Extensions.DependencyInjection。
 
 ```
-PM> Install-Package StowayNet.DependencyInjection
+PM> Install-Package StowayNet.Extensions.DependencyInjection
 ```
 
 ### 配置
 
-首先配置 StowayNet.DependencyInjection 到 Startup.cs 文件中，如下：
+首先配置 StowayNet.Extensions.DependencyInjection 到 Startup.cs 文件中，如下：
 ```c#
 ......
 using StowayNet;
@@ -51,7 +51,7 @@ public class BookService : IStowayDependency
 
 #### 方式二：特性 `StowayDependencyAttribute`
 
-通过在类中增加特性 `StowayDependencyAttribute`，通过指定 `StowayDependencyType` 参数，可以注入 `Transient`、`Scoped`、 `Singleton` 生命周期，但对于继承其子类无法注入。
+通过在类中增加特性 `StowayDependencyAttribute`，通过指定 `StowayDependencyType` 参数，可以注入 `Transient`、`Scoped`、 `Singleton` 生命周期。允许子类通过继承基类从而继承该特性。
 
 ```c#
 
