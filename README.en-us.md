@@ -2,21 +2,21 @@
   <img height="80" src="https://s.gravatar.com/avatar/6275a0046443d6fb33421b52e503bc3e?s=140">
 </p>
 
-# StowayNet.DependencyInjection 　　　　　　　　　　　[中文](https://github.com/stoway/StowayNet.DependencyInjection/blob/master/README.md)
-StowayNet.DependencyInjection is Dependency Injection extension methods for .net core, it can easily implement dependency injection.
+# StowayNet.Extensions.DependencyInjection 　　　　　　　　　　　[中文](https://github.com/stoway/StowayNet.Extensions.DependencyInjection/blob/master/README.md)
+StowayNet.Extensions.DependencyInjection is Dependency Injection extension methods for .net 5, it can easily implement dependency injection.
 
 ## Get Started
 ### NuGet 
 
-You can run the following command to install the `StowayNet.DependencyInjection` in your project.
+You can run the following command to install the `StowayNet.Extensions.DependencyInjection` in your project.
 
 ```
-PM> Install-Package StowayNet.DependencyInjection
+PM> Install-Package StowayNet.Extensions.DependencyInjection
 ```
 
 ### Configuration
 
-First,You need to config `StowayNet.DependencyInjection` in your `Startup.cs`:
+First,You need to config `StowayNet.Extensions.DependencyInjection` in your `Startup.cs`:
 ```c#
 ......
 using StowayNet;
@@ -51,7 +51,7 @@ If you want to inject `Scoped` and `Singleton` lifecycle, you need to add the at
 
 #### Sample 2：`StowayDependencyAttribute`
 
-Adding the attribute `StowayDependencyAttribute` to class, specifying the `StowayDependencyType` parameter, the lifecycles of `Transient`、`Scoped`、 `Singleton` can be injected, but it cannot be injected for subclasses that inherit it.
+Adding the attribute `StowayDependencyAttribute` to class, specifying the `StowayDependencyType` parameter, the lifecycles of `Transient`、`Scoped`、 `Singleton` can be injected, the attribute can be inherited by derived classes.
 
 ```c#
 
