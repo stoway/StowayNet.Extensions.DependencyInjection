@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>StowayNet</RootNamespace>
+    <Version>1.0.1</Version>
+    <Authors>stoway</Authors>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Company>stoway.net</Company>
+    <PackageProjectUrl>https://github.com/stoway/StowayNet.Extensions.DependencyInjection</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/stoway/StowayNet.Extensions.DependencyInjection</RepositoryUrl>
+    <Copyright>stoway</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>StowayNet.Extensions.DependencyInjection is Dependency Injection extension methods for Microsoft.Net, it can easily implement dependency injection.</Description>
+    <PackageReleaseNotes>Release notes are at https://github.com/stoway/StowayNet.Extensions.DependencyInjection/releases</PackageReleaseNotes>
+    <PackageTags>di, ioc, dependencyinjection</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
