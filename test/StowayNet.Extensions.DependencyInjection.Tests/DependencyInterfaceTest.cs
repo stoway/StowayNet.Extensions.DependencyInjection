@@ -16,15 +16,16 @@ namespace StowayNet.Extensions.DependencyInjection.Tests
             services.AddStowayNet();
             var provider = services.BuildServiceProvider();
 
-            var service = provider.GetService<ISingleFoo>();
+            var service1 = provider.GetService<ISingletonFoo>();
 
-            Assert.NotNull(service);
+            var service2 = provider.GetService<ISingletonFoo>();
+
+            Assert.Equal(service1, service2);
         }
 
 
         [Theory]
-        [InlineData(typeof(Foo1))]
-        [InlineData(typeof(Foo2))]
+        [InlineData(typeof(Foo))]
         public void Validate_ClassesImplementInterface(Type type)
         {
             ServiceCollection services = new ServiceCollection();
@@ -43,19 +44,20 @@ namespace StowayNet.Extensions.DependencyInjection.Tests
             services.AddStowayNet();
             var provider = services.BuildServiceProvider();
 
-            var service1 = provider.GetService<ISingleFoo>();
-            var service2 = provider.GetService<ISingleFoo>();
+            var service1 = provider.GetService<IFoo>();
+            var service2 = provider.GetService<IFoo>();
 
             Assert.NotEqual(service1, service2);
         }
     }
 
-    public interface ISingleFoo : IStowayDependency
+    public interface ISingletonFoo
     {
 
     }
 
-    public class SingleFoo : ISingleFoo
+    [StowayDependency(StowayDependencyType.Singleton)]
+    public class SingleFoo : ISingletonFoo
     {
 
     }
@@ -65,12 +67,7 @@ namespace StowayNet.Extensions.DependencyInjection.Tests
 
     }
 
-    public class Foo1 : IFoo
-    {
-
-    }
-
-    public class Foo2 : IFoo
+    public class Foo : IFoo
     {
 
     }

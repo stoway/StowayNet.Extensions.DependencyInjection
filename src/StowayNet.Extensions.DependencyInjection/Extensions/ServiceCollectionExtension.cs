@@ -11,7 +11,7 @@ namespace StowayNet
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection AddStowayNet(this IServiceCollection services)
+        public static IStowayNetBuilder AddStowayNet(this IServiceCollection services)
         {
             var provider = services.BuildServiceProvider();
 
@@ -49,7 +49,8 @@ namespace StowayNet
                 manager.Register(services, allTypes, configuration);
             }
 
-            return services;
+            var builder = new InternalStowayNetBuilder(services);
+            return builder;
         }
 
         public static IServiceCollection RegisterTypes(this IServiceCollection services, Type[] types, ServiceLifetime serviceLifetime, bool asImplementedInterfaces = true, bool asSelf = false)
