@@ -1,6 +1,3 @@
-<p align="center">
-  <img height="80" src="https://s.gravatar.com/avatar/6275a0046443d6fb33421b52e503bc3e?s=140">
-</p>
 
 # StowayNet.Extensions.DependencyInjection 　　　　　　　　　　　[En](https://github.com/stoway/StowayNet.Extensions.DependencyInjection/blob/master/README.en-us.md)
  StowayNet.Extensions.DependencyInjection 是基于 .net 5 框架中的依赖注入实现的扩展方法，它可以在项目中更简捷的实现依赖注入。
